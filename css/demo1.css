@@ -2,11 +2,11 @@
 	--color-text: #fff;
 	--color-bg: #000;
 	--color-link: #fff;
-	--color-link-hover: #ac1122;
-	--color-info: #ac1122;
+	--color-link-hover: #ffd700;
+	--color-info: #ffd700;
 	--color-title: #fff;
 	--color-subtitle: #fff;
-	--color-subtitle-bg: #ac1122;
+	--color-subtitle-bg: #660b0b;
 }
 
 .content__title {

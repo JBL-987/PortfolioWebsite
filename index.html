@@ -1,99 +1,234 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Decorative WebGL Backgrounds | Demo 1 | Codrops</title>
-		<meta name="description" content="A collection of decorative animated background shapes powered by WebGL and TweenMax." />
-		<meta name="keywords" content="webgl, background, shape, web design, web development, tweenmax, gsap, animation" />
-		<meta name="author" content="Louis Hoebregts for Codrops" />
-		<link rel="shortcut icon" href="favicon.ico">
-		<link href="https://fonts.googleapis.com/css?family=Barlow:400,500,700|Playfair+Display" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/base.css" />
-		<link rel="stylesheet" type="text/css" href="css/demo1.css" />
-		<link rel="stylesheet" type="text/css" href="pater/pater.css" />
-		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
-	</head>
-	<body class="demo-1">
-		<svg class="hidden">
-			<symbol id="icon-arrow" viewBox="0 0 24 24">
-				<title>arrow</title>
-				<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
-			</symbol>
-			<symbol id="icon-drop" viewBox="0 0 24 24">
-				<title>drop</title>
-				<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/><path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
-			</symbol>
-			<symbol id="icon-github" viewBox="0 0 32.6 31.8">
-				<title>github</title>
-				<path d="M16.3,0C7.3,0,0,7.3,0,16.3c0,7.2,4.7,13.3,11.1,15.5c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4C7.4,10.7,6.8,9,7.7,6.8c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C32.6,7.3,25.3,0,16.3,0z"/>
-			</symbol>
-			<symbol id="icon-keyboard" viewBox="0 0 100 70">
-				<title>keyboard</title>
-				<!-- https://thenounproject.com/term/keyboard/783/ by Paul te Kortschot from the Noun Project -->
-				<path d="M 60.94,1.83 39.22,1.83 C 36.71,1.83 34.67,3.86 34.67,6.376 L 34.67,28.1 C 34.67,30.61 36.71,32.65 39.22,32.65 L 60.94,32.65 C 63.45,32.65 65.5,30.61 65.5,28.1 L 65.5,6.376 C 65.5,3.86 63.45,1.83 60.94,1.83 Z M 44.79,18.63 50.08,11.74 55.37,18.63 Z" opacity="0.2"/>
-				<path d="M 60.86,36.75 39.14,36.75 C 36.63,36.75 34.59,38.79 34.59,41.3 L 34.59,63.02 C 34.59,65.53 36.63,67.57 39.14,67.57 L 60.86,67.57 C 63.38,67.57 65.41,65.53 65.41,63.02 L 65.41,41.3 C 65.42,38.79 63.38,36.75 60.86,36.75 Z M 50.08,57.45 44.79,50.55 55.37,50.55 Z" opacity="0.2" />
-				<path d="M 95.45,36.75 73.73,36.75 C 71.22,36.75 69.18,38.79 69.18,41.3 L 69.18,63.02 C 69.18,65.53 71.22,67.57 73.73,67.57 L 95.45,67.57 C 97.97,67.57 100,65.53 100,63.02 L 100,41.3 C 100,38.79 97.97,36.75 95.45,36.75 Z M 83.4,57.45 83.4,46.86 90.3,52.16 Z" />
-				<path d="M 26.27,36.75 4.55,36.75 C 2.037,36.75 0,38.79 0,41.3 L 0,63.02 C 0,65.53 2.037,67.57 4.55,67.57 L 26.27,67.57 C 28.78,67.57 30.82,65.53 30.82,63.02 L 30.82,41.3 C 30.82,38.79 28.78,36.75 26.27,36.75 Z M 16.69,57.45 9.79,52.16 16.69,46.86 Z" />
-			</symbol>
-		</svg>
-		<main>
-			<div class="content content--fixed">
-				<header class="codrops-header">
-					<div class="codrops-links">
-						<a class="codrops-icon codrops-icon--prev" href="https://tympanus.net/Development/AnimatedFrameSlideshow/" title="Previous Demo"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
-						<a class="codrops-icon codrops-icon--drop" href="https://tympanus.net/codrops/?p=33168" title="Back to the article"><svg class="icon icon--drop"><use xlink:href="#icon-drop"></use></svg></a>
-					</div>
-					<h1 class="codrops-header__title">Decorative WebGL Backgrounds</h1>
-				</header>
-				<a class="github" href="https://github.com/Mamboleoo/DecorativeBackgrounds/" title="Find this project on GitHub"><svg class="icon icon--github"><use xlink:href="#icon-github"></use></svg></a>
-				<nav class="demos">
-					<svg class="icon icon--keyboard"><use xlink:href="#icon-keyboard"></use></svg>
-					<a class="demo demo--current" href="index.html"><span>Demo 1</span></a>
-					<a class="demo" href="index2.html"><span>Demo 2</span></a>
-					<a class="demo" href="index3.html"><span>Demo 3</span></a>
-					<a class="demo" href="index4.html"><span>Demo 4</span></a>
-					<a class="demo" href="index5.html"><span>Demo 5</span></a>
-					<a class="demo" href="index6.html"><span>Demo 6</span></a>
-				</nav>
-				<a class="pater" href="http://go.thoughtleaders.io/TLDcodrops211117" onClick="recordOutboundLink(this, 'Outbound Links', 'TLDcodrops211117');return false;">
-					<img class="pater__img" src="pater/TLD.png" alt="TLD"/>
-					<h3 class="pater__title">​Snag the hottest new domain name for designers</h3>
-					<p class="pater__description">.design domains were just released and some of the best ones are still available. They normally cost $35 but Codrops readers <strong>get them now for FREE!</strong></p>
-				</a>
-			</div>
-			<div class="content">
-				<canvas class="scene scene--full" id="scene"></canvas>
-				<script type="x-shader/x-vertex" id="wrapVertexShader">
-					attribute float size;
-					attribute vec3 color;
-					varying vec3 vColor;
-					void main() {
-						vColor = color;
-						vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-						gl_PointSize = size * ( 350.0 / - mvPosition.z );
-						gl_Position = projectionMatrix * mvPosition;
-					}
-				</script>
-				<script type="x-shader/x-fragment" id="wrapFragmentShader">
-					varying vec3 vColor;
-					uniform sampler2D texture;
-					void main(){
-						vec4 textureColor = texture2D( texture, gl_PointCoord );
-						if ( textureColor.a < 0.3 ) discard;
-						vec4 color = vec4(vColor.xyz, 1.0) * textureColor;
-						gl_FragColor = color;
-					}
-				</script>
-				<div class="content__inner">
-					<h2 class="content__title">Information</h2>
-					<h3 class="content__subtitle">Data Science</h2>
-				</div>
-			</div>
-		</main>
-		<script src="js/demo.js"></script>
-		<script src="js/three.min.js"></script>
-		<script src="js/TweenMax.min.js"></script>
-		<script src="js/demo1.js"></script>
-	</body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jason Brandon Loi | Portfolio Website</title>
+    <meta name="description" content="Explore the portfolio of Jason Brandon Loi — showcasing innovative projects, hackathon achievements, and creative web development work." />
+    <meta name="keywords" content="Jason Brandon Loi, portfolio, web development, programming, hackathon, software engineering, AI projects" />
+    <meta name="author" content="Jason Brandon Loi" />
+    <link rel="shortcut icon" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Barlow:400,500,700|Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/demo1.css" />
+    <link rel="stylesheet" type="text/css" href="pater/pater.css" />
+    </head>
+<body class="demo-1">
+    <main>
+        <div class="content content--fixed">
+            <nav class="portfolio-nav">
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                </div>
+            </nav>
+        </div>
+        <div class="content" id="home">
+            <canvas class="scene scene--full" id="scene"></canvas>
+            <script type="x-shader/x-vertex" id="wrapVertexShader">
+                attribute float size;
+                attribute vec3 color;
+                varying vec3 vColor;
+                void main() {
+                    vColor = color;
+                    vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+                    gl_PointSize = size * ( 350.0 / - mvPosition.z );
+                    gl_Position = projectionMatrix * mvPosition;
+                }
+            </script>
+            <script type="x-shader/x-fragment" id="wrapFragmentShader">
+                varying vec3 vColor;
+                uniform sampler2D texture;
+                void main(){
+                    vec4 textureColor = texture2D( texture, gl_PointCoord );
+                    if ( textureColor.a < 0.3 ) discard;
+                    vec4 color = vec4(vColor.xyz, 1.0) * textureColor;
+                    gl_FragColor = color;
+                }
+            </script>
+            <div class="content__inner">
+                <h2 class="content__title">Welcome To My Portfolio</h2>
+                <h3 class="content__subtitle">Website</h3>
+            </div>
+        </div>
+        <section id="about" class="section">
+            <div class="section-content">
+                <div class="about-container">
+                    <div class="about-image">
+                        <img src="img/About.jpg" alt="Profile Image">
+                    </div>
+                    <div class="about-text">
+                      <h2>About Me</h2>
+                    <p>
+                        Hi, I'm <strong>Jason Brandon Loi</strong>, a passionate and dedicated developer specializing in web development and artificial intelligence. Over the years, I have honed my skills in both front-end and back-end technologies, allowing me to build seamless, interactive, and user-friendly digital experiences.  
+                    </p>
+                    <p>
+                        I love exploring new technologies and staying updated with the latest trends in software development and AI innovation. Whether it's crafting responsive websites, developing scalable backend systems, or experimenting with machine learning models, I thrive on challenges that push my creativity and technical expertise.</p>
+                    <p>
+                        Beyond coding, I’m committed to continuous learning and sharing knowledge with the developer community. I believe that technology can transform the way we live, work, and connect — and I’m excited to contribute my skills to projects that make a real impact.  
+                    </p>
+                    <p>
+                        Welcome to my portfolio! Feel free to explore my projects and get in touch if you want to collaborate or just talk tech.
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="section">
+            <div class="section-content">
+                <h2>My Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/HiCountant.png" alt="Project 1">
+                        </div>
+                        <div class="project-content">
+                            <h3>Hi! Countant</h3>
+                            <p>Hi! Countant is a pioneering fintech platform that combines artificial intelligence with blockchain technology to revolutionize accounting and financial management. Built on the Internet Computer Protocol, it leverages Gemini AI models to provide:<br>
+                            📊 AI-driven financial data analysis<br>
+                            💼 Automated transaction processing<br>
+                            📝 Comprehensive financial reporting<br>
+                            💡 Intelligent financial recommendations<br><br>
+                            <strong>Tech Stack:</strong> React 18.3.1 with Vite 5.4.18, Motoko on ICP, Google Gemini 2.5 Flash, Tailwind CSS 3.4.14 with DaisyUI</p>
+                            <div class="project-links">
+                                <a href="https://github.com/JBL-987/Hi-Countant" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/HistoriBuddy.jpeg" alt="Project 2">
+                        </div>
+                        <div class="project-content">
+                            <h3>HistoriBuddy</h3>
+                            <p>HistoriBuddy - AI-Powered Historical Exploration App<br>
+                            Flutter Mobile Application | AI | Google AI Studio | Firebase | Computer Vision<br><br>
+                            HistoriBuddy is a mobile app that helps tourists and history enthusiasts discover and learn about historical objects through AI-powered interactions. Simply take a photo of a historical artifact, monument, or building, and HistoriBuddy provides detailed information via an interactive chat with your personalized cultural mascot.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/amirudev/gsc-historibuddy" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/AiChemy.png" alt="Project 3">
+                        </div>
+                        <div class="project-content">
+                            <h3>AI Chemy</h3>
+                            <p>AI-chemy is a cutting-edge platform that combines artificial intelligence with chemical synthesis research. Built on the Internet Computer Protocol, it leverages LLaMA-based models to provide:<br>
+                            🧪 AI-driven material synthesis analysis<br>
+                            🔍 Real-time chemical reaction visualization<br>
+                            📊 Comprehensive research data analysis<br><br>
+                            <strong>Tech Stack:</strong> React 18.3.1 with Vite 5.4.11, Rust on ICP, LLaMA 3.1 8B, Tailwind CSS 3.4.14</p>
+                            <div class="project-links">
+                                <a href="https://github.com/JBL-987/AI-Chemy" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/BeFinder.png" alt="Project 3">
+                        </div>
+                        <div class="project-content">
+                            <h3>Be Finder</h3>
+                            <p>Be-Finder is a geospatial analytics platform that calculates business potential based on pinned locations within specific areas. Using advanced geospatial technology powered by OpenStreetMap and Leaflet mapping libraries, the platform provides data-driven insights for strategic business placement and market analysis.<br><br>
+                            🗺️ Interactive mapping with OpenStreetMap integration<br>
+                            📍 Location-based business potential analysis<br>
+                            📊 Geospatial data visualization and analytics<br>
+                            🎯 Strategic location assessment tools<br><br>
+                            <strong>Tech Stack:</strong> React.js, Tailwind CSS, JavaScript, Motoko (ICP Backend), OpenStreetMap, Leaflet</p>
+                            <div class="project-links">
+                                <a href="https://github.com/JBL-987/Be-Finder" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/TradeTalk.png" alt="Project 3">
+                        </div>
+                        <div class="project-content">
+                            <h3>Trade Talk</h3>
+                            <p>Telegram Clone with Enhanced Features - A modern messaging web app inspired by Telegram, built using Next.js, TypeScript, Firebase, and Tailwind CSS. This project goes beyond basic messaging by integrating several powerful tools and APIs to enrich the user experience:<br>
+                            📈 TradingView Chart integration for live market data visualization<br>
+                            🗞️ NewsAPI to deliver real-time financial and crypto news<br>
+                            🤖 AI-powered chat assistant using OpenRouter (API-AI integration)<br>
+                            🌀 GSAP (GreenSock) for smooth and elegant scroll animations<br>
+                            🎨 Spline 3D models on the homepage for interactive 3D visuals<br><br>
+                            This clone not only replicates core Telegram functionality, but also experiments with interactive UI, real-time data, and intelligent features to push the boundaries of what a modern chat app can do.<br><br>
+                            <strong>Skills:</strong> TypeScript, Next.js, Firebase, Tailwind CSS, GSAP</p>
+                            <div class="project-links">
+                                <a href="https://github.com/JBL-987/Tradetalk" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/Resepverse.png" alt="Project 3">
+                        </div>
+                        <div class="project-content">
+                            <h3>Resepverse</h3>
+                            <p>Resepverse is a blockchain-powered recipe marketplace where culinary passion meets blockchain innovation. The platform allows chefs to share recipes, earn tokens, and mint their recipes as NFTs.<br><br>
+                            📝 Recipe sharing and NFT minting<br>
+                            🛒 Recipe marketplace with voting system<br>
+                            💰 Chef reputation and royalty distribution<br><br>
+                            <strong>Tech Stack:</strong> React + TypeScript, TailwindCSS, Solidity 0.8.23, Lisk Chain, Hardhat</p>
+                            <div class="project-links">
+                                <a href="https://github.com/JBL-987/Resepverse" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/Scanny.jpeg" alt="Project 3">
+                        </div>
+                        <div class="project-content">
+                            <h3>Scanny</h3>
+                            <p>🎓 Scanny – Smart Learning App for Kids Using Gemini OCR<br>
+                            Built with Flutter & Google AI<br><br>
+                            Scanny is a mobile application designed to help young children learn better by interacting with the world around them. Built with Flutter, the app uses Google's Gemini OCR to scan and describe real-world objects or text captured through the phone's camera.<br><br>
+                            Instead of just extracting text, Scanny explains what's in the image in a way that's simple and educational — helping kids understand letters, words, signs, and objects using AI-generated descriptions.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/JBL-987/Scanny" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="section-content">
+                <h2>Contact</h2>
+            <p>Feel free to reach out via the links below.</p>
+            <div class="contact-links">
+                <a href="mailto:jasonbrandonloi03@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://github.com/JBL-987"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/jason-brandon-loi-935b1b297/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://www.instagram.com/jbl._.loi/"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+    </footer>
+    </main>
+    <script src="js/demo.js"></script>
+    <script src="js/three.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/demo1.js"></script>
+	<script src="js/hamburger-menu.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/scroll-effects.js"></script>
+</body>
 </html>

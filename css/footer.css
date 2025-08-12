@@ -1,0 +1,170 @@
+.footer {
+    position: relative;
+    background: #ff9900;
+    padding: 40px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.footer .section-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer h2 {
+    color: #000000;
+    font-size: 2rem;
+    margin: 0 0 1rem;
+    font-weight: 600;
+    font-family: 'Barlow', sans-serif;
+}
+
+.footer p {
+    color: #000000;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem; 
+    flex-wrap: nowrap; 
+}
+.contact-links :hover {
+    color: #FFD700;
+}
+
+.contact-links a {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1.2rem;
+    background: #FFD700;
+    border-radius: 8px;
+    color: #000000;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-decoration: none !important;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-family: 'Barlow', sans-serif;
+    text-transform: uppercase;
+    flex: 1; 
+    min-width: 120px; 
+    justify-content: center;
+}
+
+.contact-links a:hover {
+    background: #000000;
+    transform: translateY(-2px);
+    color: #FFD700;
+}
+
+.contact-links a i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    color: #000000;
+    transition: transform 0.2s ease;
+}
+
+.contact-links a:hover i {
+    transform: scale(1.1);
+    color: #FFD700;
+}
+
+.contact-links a i.fas,
+.contact-links a i.fab {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+}
+
+.contact-links a i.fab {
+    font-family: "Font Awesome 6 Brands" !important;
+    font-weight: 400 !important;
+}
+
+.contact-links a[href*="mailto"] i::before {
+    content: "\f0e0" !important;
+}
+
+.contact-links a[href*="github"] i::before {
+    content: "\f09b" !important; 
+}
+
+.contact-links a[href*="linkedin"] i::before {
+    content: "\f08c" !important; 
+}
+
+.contact-links a[href*="twitter"] i::before {
+    content: "\f099" !important; 
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 30px 15px;
+    }
+
+    .footer h2 {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-links {
+        gap: 1.2rem; 
+        flex-wrap: wrap; 
+    }
+
+    .contact-links a {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+        flex: 0 1 auto; 
+        min-width: 100px; 
+    }
+
+    .contact-links a i {
+        font-size: 1rem;
+        margin-right: 6px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer {
+        padding: 20px 10px;
+    }
+
+    .footer h2 {
+        font-size: 1.4rem;
+    }
+
+    .footer p {
+        margin-bottom: 1.2rem;
+    }
+
+    .contact-links {
+        gap: 1rem; 
+        flex-wrap: wrap; 
+    }
+
+    .contact-links a {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+        min-width: 90px; 
+    }
+
+    .contact-links a i {
+        margin-right: 5px;
+    }
+}
